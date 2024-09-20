@@ -35,3 +35,7 @@ if (letterGrade == "C" || letterGrade == "B" || letterGrade == "A")
 {
     Console.WriteLine("You passed! Congratulations");
 }
+
+else{
+    Console.WriteLine("Sorry, you're just a little dumb for this course. Better luck next time");
+}
