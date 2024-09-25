@@ -15,7 +15,10 @@ while (entry != 0)
     Console.Write("Enter a number:  ");
     intoInt = Console.ReadLine();
     entry = int.Parse(intoInt);
-    numbers.Add(entry);
+    if (entry != 0)
+    {
+        numbers.Add(entry);
+    }
 }
 
 foreach (int number in numbers)
@@ -23,7 +26,7 @@ foreach (int number in numbers)
     sum += number;
 }
 
-length = numbers.Count - 1;
+length = numbers.Count;
 average = sum / length;
 
 Console.WriteLine();
