@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-List<int> numbers = new List<int>();
+List<int> numbers = new();
 int entry = -1;
 string intoInt;
 int average;
