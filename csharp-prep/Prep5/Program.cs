@@ -10,14 +10,15 @@ static string PromptUserName()
 {
     Console.WriteLine("Please enter your name:  ");
     string name = Console.ReadLine();
+
     return name;
 }
 
 static int PromptUserNumber()
 {
     Console.WriteLine("Please enter your favorite number:  ");
-    string entry = Console.ReadLine();
-    int number = int.Parse(entry);
+    int number = int.Parse(Console.ReadLine());
+    
     return number;
 }
 
@@ -35,9 +36,12 @@ static void DisplayResult(string name, int number)
 static void Main()
 {
     DisplayWelcome();
+
     string name = PromptUserName();
     int num = PromptUserNumber();
+
     int sq_num = SquareNumber(num);
+
     DisplayResult(name, sq_num);
 }
 
