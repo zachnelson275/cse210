@@ -6,9 +6,10 @@ public class Entry {
         public DateTime CurrentDate { get; set; }
 
 
-        public Entry()
+        public static string getInput()
         {
-            CurrentDate = DateTime.Now;
+            string input = Console.ReadLine();
+            return input;
         }
         public static string randomizePrompt(string[] promptList)
         {
@@ -16,9 +17,16 @@ public class Entry {
             int randomIndex = random.Next(promptList.Length);
             return promptList[randomIndex];
         }
-        public static string getInput()
+        public Entry()
         {
-            string input = Console.ReadLine();
-            return input;
+            CurrentDate = DateTime.Now;
         }
+        public static string combineString(string prompt, DateTime date, string input)
+        {
+            string combinedResult = "";
+            combinedResult += "Date: " + date + " - Prompt: " + prompt;
+            combinedResult += input;
+            return combinedResult;
+        }
+        
     }
