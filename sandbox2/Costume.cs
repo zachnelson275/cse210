@@ -1,5 +1,5 @@
-﻿
-        class Costume;
+﻿using System;
+        class Costume {
             public string gloves;
 
             public string upperGarment;
@@ -12,7 +12,7 @@
 
             public string shoes;
 
-            public void showWardrobe();
+            public void showWardrobe()
             {
                 string result = "";
                 result += "Head gear: " + headware;
@@ -21,5 +21,6 @@
                 result += "Torse covering: " + upperGarment;
                 result += "Leg covering: " + lowerGarment;
                 result += "Accessory: " + accessory;
-                Console.WriteLine(result)
+                Console.WriteLine(result);
             }
+        }

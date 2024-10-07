@@ -1,5 +1,9 @@
-use
-        Costume nurse = new();
+using System;
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Costume nurse = new Costume();
         nurse.headware = "face mask";
         nurse.gloves = "nitrile gloves";
         nurse.shoes = "orthopedic sneakers";
@@ -7,7 +11,7 @@ use
         nurse.lowerGarment = "scrubs";
         nurse.accessory = "stethoscope";
 
-        Costume detective = new();
+        Costume detective = new Costume();
         detective.headware = "fedora";
         detective.gloves = "leather gloves";
         detective.shoes = "loafers";
@@ -15,7 +19,7 @@ use
         detective.lowerGarment = "slacks";
         detective.accessory = "magnifying glass";
 
-        Costume rancher = new();
+        Costume rancher = new Costume();
         rancher.headware = "cowboy hat";
         rancher.gloves = "work gloves";
         rancher.shoes = "boots";
@@ -26,3 +30,5 @@ use
         nurse.showWardrobe();
         detective.showWardrobe();
         rancher.showWardrobe();
+    }
+}
