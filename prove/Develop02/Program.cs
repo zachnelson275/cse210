@@ -35,6 +35,10 @@ internal class Program
             {
                 journal.displayEntryList(entries);
             }
+            else if (choice == 3)
+            {
+                
+            }
         }
         while (choice != 5);
     }
