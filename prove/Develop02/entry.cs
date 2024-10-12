@@ -26,6 +26,7 @@ public class Entry {
             string combinedResult = "";
             combinedResult += "Date: " + date + " - Prompt: " + prompt;
             combinedResult += input;
+            combinedResult += "%#$";
             return combinedResult;
         }
         

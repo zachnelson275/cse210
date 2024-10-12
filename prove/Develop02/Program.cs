@@ -31,13 +31,40 @@ internal class Program
                 string combinedEntry = Entry.combineString(randomPrompt, newEntry.CurrentDate, newEntry.input);
                 entries.Append(combinedEntry); 
             }
+            
             else if (choice == 2)
             {
                 journal.displayEntryList(entries);
             }
+
             else if (choice == 3)
             {
-                
+                Console.WriteLine("What is the name of the file you'd like to save to?");
+                string fileName = Console.ReadLine();
+
+                using (StreamWriter outputFile = new StreamWriter(fileName))
+                {
+                    outputFile.WriteLine(entries);
+                }
+            }
+
+            else if (choice == 4)
+            {
+                entries = [];
+                Console.WriteLine("What is the name of the file you'd like to load?");
+                string fileName = Console.ReadLine();
+
+                string[] lines = System.IO.File.ReadAllLines(fileName);
+
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split(new string[] { "%#$" }, StringSplitOptions.None);
+                    foreach (string part in parts)
+                    {
+                        string cleanedPart = part.Trim();
+                        entries.Append(cleanedPart);
+                    }
+                }
             }
         }
         while (choice != 5);
