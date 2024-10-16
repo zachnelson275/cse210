@@ -7,7 +7,7 @@ internal class Program
     {
         Journal journal = new Journal();
         string[] prompts = journal.promptList;
-        string[] entries = journal.entryList;
+        List<string> entries = journal.entryList;
         int choice = 0;
         do {
             Console.WriteLine("Welcome to your Journal!");
@@ -18,7 +18,8 @@ internal class Program
 3. Save to File
 4. Load from File
 5. Quit
-            ");
+
+");
             
             choice = int.Parse(Console.ReadLine());
             if (choice == 1)
@@ -29,11 +30,46 @@ internal class Program
                 newEntry.input = Console.ReadLine();
                 newEntry.CurrentDate = DateTime.Now;
                 string combinedEntry = Entry.combineString(randomPrompt, newEntry.CurrentDate, newEntry.input);
-                entries.Append(combinedEntry); 
+                entries.Add(combinedEntry);
+                entries.Add("%#$"); 
             }
+
             else if (choice == 2)
             {
-                journal.displayEntryList(entries);
+                journal.displayEntryList();
+            }
+
+            else if (choice == 3)
+            {
+                Console.WriteLine("What is the name of the file you'd like to save to?");
+                string fileName = Console.ReadLine();
+
+                using (StreamWriter outputFile = new StreamWriter(fileName))
+                {
+                    foreach (string entry in entries)
+                    {
+                        outputFile.WriteLine(entry);
+                    }
+                }
+            }
+
+            else if (choice == 4)
+            {
+                entries.Clear();
+                Console.WriteLine("What is the name of the file you'd like to load?");
+                string fileName = Console.ReadLine();
+
+                string[] lines = System.IO.File.ReadAllLines(fileName);
+
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split(new string[] { "%#$" }, StringSplitOptions.None);
+                    foreach (string part in parts)
+                    {
+                        string cleanedPart = part.Trim();
+                        entries.Add(cleanedPart);
+                    }
+                }
             }
         }
         while (choice != 5);
