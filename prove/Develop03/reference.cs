@@ -6,13 +6,21 @@ class Reference
     private int _endVerse;
     public void displayReference()
     {
-        Console.Write($"{_book} {_chapter}: {_startVerse}-{_endVerse}");
+        if (_endVerse != 0)
+        {
+            Console.Write($"{_book} {_chapter}: {_startVerse}-{_endVerse}");
+        }
+        else 
+        {
+            Console.Write($"{_book} {_chapter}: {_startVerse}");
+
+        }
     }
-    public Reference(string book, int chapter, int startVerse, int endVerse)
+    public Reference(string book, int chapter, int startVerse)
     {
         _book = book;
         _chapter = chapter;
         _startVerse = startVerse;
-        _endVerse = endVerse;
+        _endVerse = 0;
     }
 }
