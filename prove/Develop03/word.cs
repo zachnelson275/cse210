@@ -11,6 +11,12 @@ class Word
     public void Hide()
     {
         _revealed = false;
+        int length = _word.Length;
+        _word = "";
+        for (int i = 0; i < length; i++)
+        {
+            _word += "_";
+        }
     }
     public bool IsRevealed()
     {
