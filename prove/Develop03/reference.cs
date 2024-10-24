@@ -1,9 +1,9 @@
 class Reference
 {
-    private string _book;
-    private int _chapter;
-    private int _startVerse;
-    private int _endVerse;
+    private string _book { get; set;}
+    private int _chapter { get; set;}
+    private int _startVerse { get; set; }
+    private int _endVerse { get; set; }
     public void displayReference()
     {
         if (_endVerse != 0)
@@ -22,5 +22,16 @@ class Reference
         _chapter = chapter;
         _startVerse = startVerse;
         _endVerse = 0;
+    }
+    public Reference(string book, int chapter, int startVerse, int endVerse)
+    {
+        _book = book;
+        _chapter = chapter;
+        _startVerse = startVerse;
+        _endVerse = endVerse;
+    }
+
+    public Reference()
+    {
     }
 }

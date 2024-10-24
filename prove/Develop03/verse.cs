@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 class Verse
 {
     private List<Word> _wordList = new List<Word>();
@@ -27,11 +25,8 @@ class Verse
     }
     public void HideRandomWord()
     {
-        for (int i = 0; i < 3; i++)
-        {
-            Random rng = new Random();
-            int random = rng.Next(GetWordCount());
-            _wordList[random].Hide();
-        }
+        Random rng = new Random();
+        int random = rng.Next(GetWordCount());
+        _wordList[random].Hide();
     }
 }
