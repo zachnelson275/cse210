@@ -32,6 +32,7 @@ class Program
             new Word("everlasting"), 
             new Word("life"), 
         };
+
         List<Word> verse17Words = new List<Word>
         {
             new Word("For"), 
@@ -57,8 +58,10 @@ class Program
             new Word("be"), 
             new Word("saved"), 
         };
+
         Verse verse16 = new Verse(verse16Words);
         Verse verse17 = new Verse(verse17Words);
+
         List<Verse> verses = new List<Verse> { verse16, verse17 };
         Reference reference = new Reference("John", 3, 16, 17);
         Scripture scripture = new Scripture(reference, verses);
@@ -74,13 +77,16 @@ class Program
         {
             scripture.Display();
             string next = Console.ReadLine();
+
             if (next == "quit")
             {
                 break;
             }
+
             Console.Clear();
             Console.WriteLine("Press Enter to continue, or type 'quit' to quit");
             Console.WriteLine();
+            
             scripture.HideThreeRandomWords();
             verse16Revealed = verse16.GetRevealedCount();
             verse17Revealed = verse17.GetRevealedCount();
