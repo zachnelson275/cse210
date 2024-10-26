@@ -13,7 +13,7 @@ class Scripture
     }
     public void Display()
     {
-        _scriptureReference.displayReference();
+        _scriptureReference.Display();
         Console.WriteLine();
         foreach (var verse in _verses)
         {

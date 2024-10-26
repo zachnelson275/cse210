@@ -6,17 +6,11 @@ class Word
     private string _word;
     public void Display()
     {
-        _revealed = true;
+        Console.Write(_revealed ? _word : new string('_', _word.Length));
     }
     public void Hide()
     {
         _revealed = false;
-        int length = _word.Length;
-        _word = "";
-        for (int i = 0; i < length; i++)
-        {
-            _word += "_";
-        }
     }
     public bool IsRevealed()
     {

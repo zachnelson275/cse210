@@ -7,15 +7,21 @@ class Verse
     }
     public void Display()
     {
-        string verse = String.Join(" ", _wordList);
-        Console.WriteLine(verse);
+        // string verse = String.Join(" ", _wordList);
+        // Console.WriteLine(verse);
+        foreach (var word in _wordList)
+        {
+            word.Display();
+            Console.Write(" ");
+        }
+        Console.WriteLine();
     }
     public int GetWordCount()
     {
         int wordCount = _wordList.Count();
         return wordCount;
     }
-    public int GetRevealedCount(List<Word> _wordList)
+    public int GetRevealedCount()
     {
         return _wordList.Count(Word => Word._revealed == true);
     }

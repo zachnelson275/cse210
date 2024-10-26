@@ -4,11 +4,11 @@ class Reference
     private int _chapter { get; set;}
     private int _startVerse { get; set; }
     private int _endVerse { get; set; }
-    public void displayReference()
+    public void Display()
     {
         if (_endVerse != 0)
         {
-            Console.Write($"{_book} {_chapter}: {_startVerse}-{_endVerse}");
+            Console.Write($"{_book} {_chapter}:{_startVerse}-{_endVerse}");
         }
         else 
         {
@@ -31,7 +31,4 @@ class Reference
         _endVerse = endVerse;
     }
 
-    public Reference()
-    {
-    }
 }
