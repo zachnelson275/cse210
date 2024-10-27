@@ -7,8 +7,6 @@ class Verse
     }
     public void Display()
     {
-        // string verse = String.Join(" ", _wordList);
-        // Console.WriteLine(verse);
         foreach (var word in _wordList)
         {
             word.Display();
