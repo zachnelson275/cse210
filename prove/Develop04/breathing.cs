@@ -16,8 +16,8 @@ class Breathing : Activity
         int cycles = (int)Math.Floor(time / 10);
         return cycles;
     }
-    public void Breathing()
+    public void BreathingActivity()
     {
-        
+
     }
 }
