@@ -10,14 +10,45 @@ class Breathing : Activity
         Console.WriteLine("Clear your mind, and get ready.");
         base.LoadingWheel(6);
     }
-    public int GetBreathCycle()
+    public int GetBreathCycles()
     {
         double time = base.SetTimer();
         int cycles = (int)Math.Floor(time / 10);
         return cycles;
     }
-    public void BreathingActivity()
+    public void BreathCycle()
     {
+        Console.WriteLine();
+        Console.Write("Inhale");
+        for (int i = 0; i < 4; i++)
+        {
+            Console.Write(" . ");
+            Thread.Sleep(1000);
+        }
+        Console.WriteLine();
 
+        Console.Write("Hold");
+        for (int i=0; i<7; i++)
+        {
+            Console.Write(" . ");
+            Thread.Sleep(1000);
+        }
+        Console.WriteLine();
+
+        Console.Write("Exhale");
+        for (int i = 0; i < 8; i++)
+        {
+            Console.Write(" . ");
+            Thread.Sleep(1000);
+        }
+        Console.WriteLine();
+        Console.WriteLine();
+    }
+    public void BreathingActivity(int cycles)
+    {
+        for (int i = cycles; i > 0; i--)
+        {
+            BreathCycle();
+        }
     }
 }

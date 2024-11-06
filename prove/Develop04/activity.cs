@@ -1,12 +1,21 @@
 class Activity
 {
-    private int _timer;
+    protected int _timer;
     private string _name;
     private string _description;
     private int _loadingSeconds;
-    public void StartMessage()
+    public int Menu()
     {
+        Console.Write(@"Welcome to the Mindfulness app! Please choose an activity
+        
+1. Breathing
+2. Reflection
+3. Listing
+4. Quit   
 
+");
+        int choice = int.Parse(Console.ReadLine());
+        return choice;
     }
     public int SetTimer()
     {
