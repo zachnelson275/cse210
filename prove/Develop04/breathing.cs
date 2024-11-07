@@ -44,11 +44,21 @@ class Breathing : Activity
         Console.WriteLine();
         Console.WriteLine();
     }
-    public void BreathingActivity(int cycles)
+    public void BreathingActivity()
     {
+        int cycles = GetBreathCycles();
+        StartBreathing();
         for (int i = cycles; i > 0; i--)
         {
             BreathCycle();
         }
     }
 }
+
+// Example timer
+// DateTime start = DateTime.Now;
+// DateTime end = start.AddSeconds(SetTimer());
+// while (start < end)
+// {
+
+// }

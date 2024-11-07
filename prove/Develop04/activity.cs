@@ -34,10 +34,6 @@ class Activity
         Console.WriteLine(1);
         Thread.Sleep(1000);
     }
-    public void RunTimer()
-    {
-
-    }
     public void LoadingWheel(int seconds)
     {
         int iterations = (seconds * 1000) / 250;
@@ -69,9 +65,9 @@ class Activity
             Console.Write("\b\b\b\b\b");
         }
     }
-    public void EndMessage()
+    public void EndMessage(int time)
     {
-        Console.WriteLine($"You completed {_timer} seconds of this activity!");
+        Console.WriteLine($"You completed {time} seconds of this activity!");
         Console.WriteLine("Well done!");
     }
 }
