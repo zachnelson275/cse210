@@ -1,4 +1,4 @@
-class Reflection : Activity
+public class Reflection : Activity
 {
     private string[] _prompts;
     private string[] _questions;
@@ -25,23 +25,28 @@ class Reflection : Activity
         Console.Clear();
         Console.WriteLine("Welcome to the Reflection Activity!");
         Console.WriteLine();
-        Console.WriteLine("This activity will help you relax by reflecting on what's been going on recently");
-        Console.WriteLine("Clear your mind, and get ready.");
+        Console.WriteLine("This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
         base.LoadingWheel(6);
     }
     public void ReflectionActivity()
     {
         int cycles = GetQuestionCycles();
-        StartReflection();
         Console.Clear();
+        StartReflection();
+        base.LoadingWheel(6);
         Console.WriteLine(RandPrompt());
-        LoadingWheel(6);
+        base.LoadingWheel(6);
         for (int i = cycles; i > 0; i--)
         {
             Console.WriteLine();
             Console.WriteLine(RandQuestion());
             Thread.Sleep(8000);
         }
-        EndMessage(cycles * 8);
+        base.EndMessage(cycles * 8);
+    }
+    public Reflection(string[] prompts, string[] questions)
+    {
+        _prompts = prompts;
+        _questions = questions;
     }
 }

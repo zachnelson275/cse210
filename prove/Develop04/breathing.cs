@@ -1,4 +1,4 @@
-class Breathing : Activity
+public class Breathing : Activity
 {
     public void StartBreathing()
     {
@@ -21,7 +21,7 @@ class Breathing : Activity
         Console.Write("Inhale");
         for (int i = 0; i < 4; i++)
         {
-            Console.Write(" . ");
+            Console.Write($"\rInhale {i}");
             Thread.Sleep(1000);
         }
         Console.WriteLine();
@@ -29,7 +29,7 @@ class Breathing : Activity
         Console.Write("Hold");
         for (int i=0; i<7; i++)
         {
-            Console.Write(" . ");
+            Console.Write($"\rHold {i}");
             Thread.Sleep(1000);
         }
         Console.WriteLine();
@@ -37,7 +37,7 @@ class Breathing : Activity
         Console.Write("Exhale");
         for (int i = 0; i < 8; i++)
         {
-            Console.Write(" . ");
+            Console.Write($"\r Exhale {i}");
             Thread.Sleep(1000);
         }
         Console.WriteLine();
@@ -51,14 +51,6 @@ class Breathing : Activity
         {
             BreathCycle();
         }
-        EndMessage(cycles * 10);
+        base.EndMessage(cycles * 10);
     }
 }
-
-// Example timer
-// DateTime start = DateTime.Now;
-// DateTime end = start.AddSeconds(SetTimer());
-// while (start < end)
-// {
-
-// }

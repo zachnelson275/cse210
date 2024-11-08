@@ -1,8 +1,9 @@
-class Activity
+public class Activity
 {
     protected int _timer;
     public int Menu()
     {
+        Console.Clear();
         Console.Write(@"Welcome to the Mindfulness app! Please choose an activity
         
 1. Breathing
@@ -33,31 +34,31 @@ class Activity
     }
     public void LoadingWheel(int seconds)
     {
-        int iterations = (seconds * 1000) / 250;
+        int iterations = seconds / 8;
         for (int i = 0; i < iterations; i++)
         {
-            Console.WriteLine("|****");
+            Console.Write("|****");
             Thread.Sleep(250);
             Console.Write("\b\b\b\b\b");        
-            Console.WriteLine("*|***");
+            Console.Write("*|***");
             Thread.Sleep(250);
             Console.Write("\b\b\b\b\b");        
-            Console.WriteLine("**|**");
+            Console.Write("**|**");
             Thread.Sleep(250);
             Console.Write("\b\b\b\b\b");
-            Console.WriteLine("***|*");
+            Console.Write("***|*");
             Thread.Sleep(250);
             Console.Write("\b\b\b\b\b");
-            Console.WriteLine("****|");
+            Console.Write("****|");
             Thread.Sleep(250);
             Console.Write("\b\b\b\b\b");
-            Console.WriteLine("***|*");
+            Console.Write("***|*");
             Thread.Sleep(250);
             Console.Write("\b\b\b\b\b");
-            Console.WriteLine("**|**");
+            Console.Write("**|**");
             Thread.Sleep(250);
             Console.Write("\b\b\b\b\b");
-            Console.WriteLine("*|***");
+            Console.Write("*|***");
             Thread.Sleep(250);
             Console.Write("\b\b\b\b\b");
         }
@@ -66,5 +67,9 @@ class Activity
     {
         Console.WriteLine($"You completed {time} seconds of this activity!");
         Console.WriteLine("Well done!");
+        LoadingWheel(6);
+    }
+    public Activity()
+    {
     }
 }
