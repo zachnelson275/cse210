@@ -12,7 +12,7 @@ public class Breathing : Activity
     public int GetBreathCycles()
     {
         double time = base.SetTimer();
-        int cycles = (int)Math.Floor(time / 10);
+        int cycles = (int)Math.Ceiling(time / 10);
         return cycles;
     }
     public void BreathCycle()
