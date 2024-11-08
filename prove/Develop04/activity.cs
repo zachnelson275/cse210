@@ -34,40 +34,35 @@ public class Activity
     }
     public void LoadingWheel(int seconds)
     {
-        int iterations = seconds / 8;
+        int iterations = seconds / 2;
         for (int i = 0; i < iterations; i++)
         {
-            Console.Write("|****");
+            Console.Write($"\r|****");
+            Thread.Sleep(250);        
+            Console.Write($"\r*|***");
+            Thread.Sleep(250);        
+            Console.Write($"\r**|**");
             Thread.Sleep(250);
-            Console.Write("\b\b\b\b\b");        
-            Console.Write("*|***");
+            Console.Write($"\r***|*");
             Thread.Sleep(250);
-            Console.Write("\b\b\b\b\b");        
-            Console.Write("**|**");
+            Console.Write($"\r****|");
             Thread.Sleep(250);
-            Console.Write("\b\b\b\b\b");
-            Console.Write("***|*");
+            Console.Write($"\r***|*");
             Thread.Sleep(250);
-            Console.Write("\b\b\b\b\b");
-            Console.Write("****|");
+            Console.Write($"\r**|**");
             Thread.Sleep(250);
-            Console.Write("\b\b\b\b\b");
-            Console.Write("***|*");
+            Console.Write($"\r*|***");
             Thread.Sleep(250);
-            Console.Write("\b\b\b\b\b");
-            Console.Write("**|**");
-            Thread.Sleep(250);
-            Console.Write("\b\b\b\b\b");
-            Console.Write("*|***");
-            Thread.Sleep(250);
-            Console.Write("\b\b\b\b\b");
         }
+        Console.Write("\r     \r");
     }
     public void EndMessage(int time)
     {
         Console.WriteLine($"You completed {time} seconds of this activity!");
         Console.WriteLine("Well done!");
-        LoadingWheel(6);
+        Console.WriteLine();
+        Console.WriteLine("Press any key to return to the menu...");
+        Console.ReadKey();
     }
     public Activity()
     {

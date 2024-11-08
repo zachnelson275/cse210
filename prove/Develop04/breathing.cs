@@ -21,23 +21,23 @@ public class Breathing : Activity
         Console.Write("Inhale");
         for (int i = 0; i < 4; i++)
         {
-            Console.Write($"\rInhale {i}");
+            Console.Write($"\rInhale {i+1}");
             Thread.Sleep(1000);
         }
         Console.WriteLine();
 
         Console.Write("Hold");
-        for (int i=0; i<7; i++)
+        for (int i = 0; i < 2; i++)
         {
-            Console.Write($"\rHold {i}");
+            Console.Write($"\rHold {i+1}");
             Thread.Sleep(1000);
         }
         Console.WriteLine();
 
         Console.Write("Exhale");
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 4; i++)
         {
-            Console.Write($"\r Exhale {i}");
+            Console.Write($"\rExhale {i+1}");
             Thread.Sleep(1000);
         }
         Console.WriteLine();
@@ -47,6 +47,7 @@ public class Breathing : Activity
     {
         int cycles = GetBreathCycles();
         StartBreathing();
+        Console.Clear();
         for (int i = cycles; i > 0; i--)
         {
             BreathCycle();

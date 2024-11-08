@@ -17,7 +17,7 @@ public class Reflection : Activity
     public int GetQuestionCycles()
     {
         double time = base.SetTimer();
-        int cycles = (int)Math.Floor(time / 8);
+        int cycles = (int)Math.Floor(time / 10);
         return cycles;
     }
     public void StartReflection()
@@ -31,9 +31,9 @@ public class Reflection : Activity
     public void ReflectionActivity()
     {
         int cycles = GetQuestionCycles();
-        Console.Clear();
         StartReflection();
         base.LoadingWheel(6);
+        Console.Clear();
         Console.WriteLine(RandPrompt());
         base.LoadingWheel(6);
         for (int i = cycles; i > 0; i--)
@@ -42,7 +42,7 @@ public class Reflection : Activity
             Console.WriteLine(RandQuestion());
             Thread.Sleep(8000);
         }
-        base.EndMessage(cycles * 8);
+        base.EndMessage(cycles * 10);
     }
     public Reflection(string[] prompts, string[] questions)
     {

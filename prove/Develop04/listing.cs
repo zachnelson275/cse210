@@ -17,19 +17,21 @@ public class Listing : Activity
     }
     public void ListingActivity()
     {
+        int count = 0;
         int time = base.SetTimer();
-        DateTime start = DateTime.Now;
-        DateTime end = start.AddSeconds(time);
         StartListing();
         Console.Clear();
-        int count = 0;
-        while (start < end)
+        Console.WriteLine(RandPrompt());
+        base.LoadingWheel(6);
+        DateTime end = DateTime.Now.AddSeconds(time);
+        while (DateTime.Now < end)
         {
             Console.Write("> ");
             Console.ReadLine();
             count += 1;
         }
         Console.WriteLine($"You listed {count} items!");
+        Thread.Sleep(1000);
         base.EndMessage(time);
     }
     public Listing(string[] prompts)
