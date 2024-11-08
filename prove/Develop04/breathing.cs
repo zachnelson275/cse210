@@ -1,6 +1,5 @@
 class Breathing : Activity
 {
-    private int _breathCycle;
     public void StartBreathing()
     {
         Console.Clear();
@@ -52,6 +51,7 @@ class Breathing : Activity
         {
             BreathCycle();
         }
+        EndMessage(cycles * 10);
     }
 }
 

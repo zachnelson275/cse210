@@ -1,9 +1,6 @@
 class Activity
 {
     protected int _timer;
-    private string _name;
-    private string _description;
-    private int _loadingSeconds;
     public int Menu()
     {
         Console.Write(@"Welcome to the Mindfulness app! Please choose an activity
