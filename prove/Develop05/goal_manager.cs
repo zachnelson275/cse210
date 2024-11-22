@@ -37,7 +37,7 @@ public class Manager
 
         foreach (string line in lines)
         {
-            string[] parts = line.Split(new string[] { "*!@" }, StringSplitOptions.None);
+            string[] parts = line.Split(["*!@"], StringSplitOptions.None);
             foreach (string part in parts)
             {
                 string cleanedPart = part.Trim();
@@ -61,6 +61,57 @@ public class Manager
     public int DisplayPoints()
     {
         return _totalPoints;
+    }
+    public void RecordEvent()
+    {
+        DisplayGoals();
+        Console.WriteLine("Which goal would you like to complete?  ");
+        int selection = int.Parse(Console.ReadLine()) - 1;
+        int points = goals[selection].ProgressEvent();
+        AddPoints(points);
+    }
+    public void AddSimple()
+    {
+        Console.WriteLine("What is the name of this goal?  ");
+        string name = Console.ReadLine();
+        Console.WriteLine("Write a little description of this goal:  ");
+        string description = Console.ReadLine();
+        Console.WriteLine("How many points is this goal worth?  ");
+        int points = int.Parse(Console.ReadLine());
+
+        Simple simple = new Simple(name, description, points);
+
+        goals.Add(simple);
+    }
+    public void AddEternal()
+    {
+        Console.WriteLine("What is the name of this goal?  ");
+        string name = Console.ReadLine();
+        Console.WriteLine("Write a little description of this goal:  ");
+        string description = Console.ReadLine();
+        Console.WriteLine("How many points is this goal worth?  ");
+        int points = int.Parse(Console.ReadLine());
+
+        Eternal eternal = new Eternal(name, description, points);
+
+        goals.Add(eternal);
+    }
+    public void AddChecklist()
+    {
+        Console.WriteLine("What is the name of this goal?  ");
+        string name = Console.ReadLine();
+        Console.WriteLine("Write a little description of this goal:  ");
+        string description = Console.ReadLine();
+        Console.WriteLine("How many points is this goal worth?  ");
+        int points = int.Parse(Console.ReadLine());
+        Console.WriteLine("How many time would you like to complete this goal?  ");
+        int timesForBonus = int.Parse(Console.ReadLine());
+        Console.WriteLine("How many bonus points is your goal worth?  ");
+        int bonusPoints = int.Parse(Console.ReadLine());
+
+        Checklist checklist = new Checklist(name, description, points, bonusPoints, timesForBonus);
+
+        goals.Add(checklist);
     }
     public Manager()
     {
