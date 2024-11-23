@@ -13,7 +13,7 @@ public class Manager
         goalsToUse.Clear();
         foreach (Goal g in goals)
         {
-            string compressedGoal = g.CompressInfo() + "*!@";
+            string compressedGoal = g.CompressInfo();
             goalsToUse.Add(compressedGoal);
         }
 
@@ -21,6 +21,7 @@ public class Manager
         string fileName = Console.ReadLine();
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
+            outputFile.WriteLine(_totalPoints);
             foreach (string goal in goalsToUse)
             {
                 outputFile.WriteLine(goal);
@@ -35,15 +36,40 @@ public class Manager
 
         string[] lines = System.IO.File.ReadAllLines(fileName);
 
+        int points = int.Parse(lines[0].Replace(":", ""));
+        _totalPoints = points;
+
+        lines = lines.Where((val, idx) => idx != 0).ToArray();
+
         foreach (string line in lines)
         {
-            string[] parts = line.Split(["*!@"], StringSplitOptions.None);
-            foreach (string part in parts)
+            string[] data = line.Split([":"], StringSplitOptions.None);
+            string workable = data[1];
+            string[] elements = workable.Split("%,");
+
+            if (data[0] == "Simple Goal")
             {
-                string cleanedPart = part.Trim();
-                goalsToUse.Add(cleanedPart);
+                Simple simple = new Simple(elements[0], elements[1], int.Parse(elements[2]), bool.Parse(elements[3]));
+                goals.Add(simple);
             }
+            else if (data[0] == "Eternal Goal")
+            {
+                Eternal eternal = new Eternal(elements[0], elements[1], int.Parse(elements[2]));
+                goals.Add(eternal);
+            }
+            else if (data[0] == "Checklist Goal")
+            {
+                Checklist checklist = new Checklist(elements[0], elements[1], int.Parse(elements[2]), int.Parse(elements[3]), int.Parse(elements[4]));
+                goals.Add(checklist);
+            }
+
+            // foreach (string part in singleGoal)
+            // {
+            //     string cleanedPart = part.Trim();
+            //     goalsToUse.Add(cleanedPart);
+            // }
         }
+
     }
     public void DisplayGoals()
     {

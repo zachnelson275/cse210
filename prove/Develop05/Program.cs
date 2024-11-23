@@ -8,7 +8,6 @@ class Program
         int choice = 0;
         while (choice != 6)
         {
-            Console.Clear();
             Console.WriteLine($"You have {goalManager.DisplayPoints()} points");
             Console.WriteLine();
             Console.Write(@"Menu Options:
@@ -29,7 +28,7 @@ Select a choice from the menu: ");
 1. Simple Goal
 2. Eternal Goal
 3. Checklist Goal
-Which type fo goal would you like to creat? ");
+Which type of goal would you like to create? ");
                 int goalChoice = int.Parse(Console.ReadLine());
                 if (goalChoice == 1)
                 {

@@ -32,5 +32,9 @@ public class Simple : Goal
     {
         _completed = false;
     }
+    public Simple(string name, string description, int points, bool completed) : base(name, description, points)
+    {
+        _completed = completed;
+    }
 
 }
