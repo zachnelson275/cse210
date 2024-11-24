@@ -4,7 +4,7 @@ public abstract class Goal
     protected string _description;
     protected int _points;
     public abstract string CompressInfo();
-    public abstract void SetInfo();
+
     public abstract string DisplayInfo();
     public abstract int ProgressEvent();
 

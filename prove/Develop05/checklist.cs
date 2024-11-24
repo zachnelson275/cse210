@@ -30,11 +30,6 @@ public class Checklist : Goal
         }
         return pointsAwarded;
     }
-
-    public override void SetInfo()
-    {
-        throw new NotImplementedException();
-    }
     public Checklist(string name, string description, int points, int bonusPoints, int timesForBonus) : base(name, description, points)
     {
         _bonusPoints = bonusPoints;
