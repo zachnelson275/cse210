@@ -23,14 +23,13 @@ public class Simple : Goal
         _completed = true;
         return _points;
     }
-
-    public override void SetInfo()
-    {
-        throw new NotImplementedException();
-    }
     public Simple(string name, string description, int points) : base(name, description, points)
     {
         _completed = false;
+    }
+    public Simple(string name, string description, int points, bool completed) : base(name, description, points)
+    {
+        _completed = completed;
     }
 
 }

@@ -4,12 +4,6 @@ public class Eternal : Goal
     {
         return $"Eternal Goal:{_name}%,{_description}%,{_points}";
     }
-
-    public override void SetInfo()
-    {
-        throw new NotImplementedException();
-    }
-
     public override string DisplayInfo()
     {
         return $"[ ] {_name} ({_description})";
