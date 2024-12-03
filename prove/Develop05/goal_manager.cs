@@ -62,12 +62,6 @@ public class Manager
                 Checklist checklist = new Checklist(elements[0], elements[1], int.Parse(elements[2]), int.Parse(elements[3]), int.Parse(elements[4]));
                 goals.Add(checklist);
             }
-
-            // foreach (string part in singleGoal)
-            // {
-            //     string cleanedPart = part.Trim();
-            //     goalsToUse.Add(cleanedPart);
-            // }
         }
 
     }
