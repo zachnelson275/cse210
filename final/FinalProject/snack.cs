@@ -7,12 +7,14 @@ public class Snack : Food
 
     public override void DisplayRecipe()
     {
+        /*
+           Snacks live and die by how easy they are to make. They also usually make a bunch
+           to either share or save, so serving size isn't too necessary. 
+        */
         Console.WriteLine($"Name: {_name}");
         Console.WriteLine($"Calories: {_calories}");
         Console.WriteLine($"Protein: {_protein}g");
         Console.WriteLine($"Prep Time: {_prepTime} mins");
-        Console.WriteLine($"Preparation style:  {_prepType}");
-        Console.WriteLine($"Servings: {_servings}");
         Console.Write("Ingredients:  ");
         DisplayIngredients();
     }
