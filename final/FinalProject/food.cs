@@ -37,4 +37,7 @@ public abstract class Food
         DisplayIngredients();
     }
     public abstract void DisplayRecipe();
+    public void ModifyRecipe()
+    {
+    }
 }   
