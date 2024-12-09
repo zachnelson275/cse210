@@ -7,6 +7,10 @@ public class RecipeBook
         _allFoods = [];
         _recipeCount = 0;
     }
+    public void AddRecipe(Food recipe)
+    {
+        _allFoods.Add(recipe);
+    }
     public void DisplayAll()
     {
         foreach (Food food in _allFoods)
