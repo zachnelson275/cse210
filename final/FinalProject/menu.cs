@@ -59,6 +59,9 @@ public class Menu
         }
         while (entry != "done");
 
+        // delete last entry in ingredients, which is 'done'
+        ingredients = ingredients[..^1];
+
         switch(choice)
         {
             case 1:
