@@ -1,6 +1,7 @@
 using System;
 
 RecipeBook recipe_book = new RecipeBook();
+Menu menu = new Menu(recipe_book);
 
 recipe_book._allFoods.AddRange(new List<Food>
 {
@@ -146,14 +147,24 @@ recipe_book._allFoods.AddRange(new List<Food>
     )
 });
 
-recipe_book.DisplayBreakfast();
-Thread.Sleep(1000);
-recipe_book.DisplayLunch();
-Thread.Sleep(1000);
-recipe_book.DisplayDinner();
-Thread.Sleep(1000);
-recipe_book.DisplaySnack();
-Thread.Sleep(1000);
-recipe_book.DisplayDessert();
-Thread.Sleep(1000);
-recipe_book.DisplayAll();
+int choice = 0;
+do 
+{
+    menu.DisplayOptions();
+    choice = menu.GetInput();
+    if (choice == 1)
+    {
+        recipe_book.DisplayAll();
+    }
+    
+    if (choice == 2)
+    {
+        menu.AddRecipe();
+    }
+
+    if (choice == 3)
+    {
+        break;
+    }
+}
+while (choice != 4);

@@ -21,42 +21,58 @@ public class RecipeBook
     }
     public void DisplayBreakfast()
     {
-        foreach (Breakfast breakfast in _allFoods)
+        foreach (Food breakfast in _allFoods)
         {
-            breakfast.DisplayRecipe();
-            Console.WriteLine();
+            if (breakfast.Equals(typeof(Breakfast)))
+            {
+                breakfast.DisplayRecipe();
+                Console.WriteLine();
+
+            }
         }
     }
     public void DisplayLunch()
     {
-        foreach (Lunch lunch in _allFoods)
+        foreach (Food lunch in _allFoods)
         {
-            lunch.DisplayRecipe();
-            Console.WriteLine();
+            if (lunch.Equals(typeof(Lunch)))
+            {
+                lunch.DisplayRecipe();
+                Console.WriteLine();
+            }
         }
     }
     public void DisplayDinner()
     {
-        foreach (Dinner dinner in _allFoods)
+        foreach (Food dinner in _allFoods)
         {
-            dinner.DisplayRecipe();
-            Console.WriteLine();
+            if (dinner.Equals(typeof(Dinner)))
+            {
+                dinner.DisplayRecipe();
+                Console.WriteLine();
+            }
         }
     }
     public void DisplaySnack()
     {
-        foreach (Snack snack in _allFoods)
+        foreach (Food snack in _allFoods)
         {
+            if (snack.Equals(typeof(Snack)))
+            {
             snack.DisplayRecipe();
             Console.WriteLine();
+            }
         }
     }
     public void DisplayDessert()
     {
-        foreach (Dessert dessert in _allFoods)
+        foreach (Food dessert in _allFoods)
         {
+            if (dessert.Equals(typeof(Dessert)))
+            {
             dessert.DisplayRecipe();
             Console.WriteLine();
+            }
         }
     }
     public int GetTotalRecipeCount()

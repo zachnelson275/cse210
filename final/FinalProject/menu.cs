@@ -12,7 +12,7 @@ public class Menu
 2) Add Recipe
 3) Edit Recipe
 4) Quit
-        ");
+");
     }
     public int GetInput()
     {
@@ -28,7 +28,7 @@ public class Menu
 3) Dinner
 4) Snack
 5) Dessert
-        ");
+");
         Console.Write("Please select the type of recipe you'd like to create:  ");
         int choice = int.Parse(Console.ReadLine());
 
@@ -58,7 +58,7 @@ public class Menu
         do
         {
             entry = Console.ReadLine();
-            ingredients.Append(entry);
+            ingredients = ingredients.Append(entry).ToArray();
         }
         while (entry != "done");
 
