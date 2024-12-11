@@ -1,7 +1,10 @@
 public class Menu
 {
-    private List<string> options;
-    private RecipeBook recipes;
+    private RecipeBook _recipes;
+    public Menu(RecipeBook recipes)
+    {
+        _recipes = recipes;
+    }
     public void DisplayOptions()
     {
         Console.Write(@"
@@ -66,23 +69,23 @@ public class Menu
         {
             case 1:
                 Breakfast breakfast = new Breakfast(name, calories, protein, prepTime, prepType, servings, ingredients);
-                recipes.AddRecipe(breakfast);
+                _recipes.AddRecipe(breakfast);
                 break;
             case 2:
                 Lunch lunch = new Lunch(name, calories, protein, prepTime, prepType, servings, ingredients);
-                recipes.AddRecipe(lunch);
+                _recipes.AddRecipe(lunch);
                 break;
             case 3:
                 Dinner dinner = new Dinner(name, calories, protein, prepTime, prepType, servings, ingredients);
-                recipes.AddRecipe(dinner);
+                _recipes.AddRecipe(dinner);
                 break;
             case 4:
                 Snack snack = new Snack(name, calories, protein, prepTime, prepType, servings, ingredients);
-                recipes.AddRecipe(snack);
+                _recipes.AddRecipe(snack);
                 break;
             case 5:
                 Dessert dessert = new Dessert(name, calories, protein, prepTime, prepType, servings, ingredients);
-                recipes.AddRecipe(dessert);
+                _recipes.AddRecipe(dessert);
                 break;
         }
     }

@@ -1,6 +1,6 @@
 public class RecipeBook
 {
-    private List<Food> _allFoods;
+    public List<Food> _allFoods;
     private int _recipeCount;
     public RecipeBook()
     {
