@@ -16,6 +16,7 @@ public class RecipeBook
         foreach (Food food in _allFoods)
         {
             food.DisplayRecipe();
+            Console.WriteLine();
         }
     }
     public void DisplayBreakfast()
@@ -23,6 +24,7 @@ public class RecipeBook
         foreach (Breakfast breakfast in _allFoods)
         {
             breakfast.DisplayRecipe();
+            Console.WriteLine();
         }
     }
     public void DisplayLunch()
@@ -30,6 +32,7 @@ public class RecipeBook
         foreach (Lunch lunch in _allFoods)
         {
             lunch.DisplayRecipe();
+            Console.WriteLine();
         }
     }
     public void DisplayDinner()
@@ -37,6 +40,7 @@ public class RecipeBook
         foreach (Dinner dinner in _allFoods)
         {
             dinner.DisplayRecipe();
+            Console.WriteLine();
         }
     }
     public void DisplaySnack()
@@ -44,6 +48,7 @@ public class RecipeBook
         foreach (Snack snack in _allFoods)
         {
             snack.DisplayRecipe();
+            Console.WriteLine();
         }
     }
     public void DisplayDessert()
@@ -51,6 +56,7 @@ public class RecipeBook
         foreach (Dessert dessert in _allFoods)
         {
             dessert.DisplayRecipe();
+            Console.WriteLine();
         }
     }
     public int GetTotalRecipeCount()
