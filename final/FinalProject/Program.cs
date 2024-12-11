@@ -39,7 +39,7 @@ recipe_book._allFoods.AddRange(new List<Food>
         350,
         20,
         20,
-        "Grill",
+        "Wrap",
         2,
         new string[]
         {
