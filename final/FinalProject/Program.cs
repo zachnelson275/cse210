@@ -164,7 +164,7 @@ do
 
     if (choice == 3)
     {
-        break;
+        menu.EditRecipe();
     }
 }
 while (choice != 4);

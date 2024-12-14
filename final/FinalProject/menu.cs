@@ -89,8 +89,11 @@ public class Menu
                 break;
         }
     }
-    public void EditRecipe(int recipeNum)
+    public void EditRecipe()
     {
-        
+        _recipes.DisplayAllNames();
+        Console.Write("Which recipe would you like to edit?  ");
+        int choice = int.Parse(Console.ReadLine());
+        _recipes.EditRecipe(choice);
     }
 }
