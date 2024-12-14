@@ -85,11 +85,12 @@ public class RecipeBook
         int count = 0;
         foreach (Food food in _allFoods)
         {
-            Console.WriteLine($"{count += 1}, {food.GetName}");
+            string name = food.GetName();
+            Console.WriteLine($"{count += 1}, {name}");
         }
     }
     public void EditRecipe(int choice)
     {
-        _allFoods[choice].EditRecipe();
+        _allFoods[choice - 1].EditRecipe();
     }
 }
